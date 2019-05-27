@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-    <div style="font-size:30px;">{{count}}</div>
-    <p>
-      <button @click="$store.commit('add')">add</button>
-      <button @click="$store.commit('reduce')">reduce</button>
-    </p>
     <header-nav></header-nav>
     <shop></shop>
   </div>

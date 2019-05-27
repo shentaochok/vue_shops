@@ -4,14 +4,21 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state:{
-        count:1
+        carPaneData:[],
     },
     mutations:{
-        add(state){
-            state.count++;
-        },
-        reduce(state){
-            state.count--;
+        addCarPaneData(state,data){
+             let flag=true;
+             state.carPaneData.forEach(item=>{
+                    if(data.sku_id==item.sku_id){
+                        flag=false;
+                         data.count+=1;
+                    }
+             })
+             if(flag){
+                 data.count=1;
+                 state.carPaneData.push(data);
+             }
         }
     }
 })

@@ -23,7 +23,7 @@
         <span class="item-gray-btn">
           <a href="javascript:;" target="_blank">查看详情</a>
         </span>
-        <span class="item-blue-btn">加入购物车</span>
+        <span class="item-blue-btn" @click="addCarPane(item.sku_info[imageIndex])">加入购物车</span>
       </div>
       <div class="item-price clearfix">
         <i>¥</i>
@@ -47,6 +47,9 @@ export default {
   methods: {
     tabIndex(index) {
       this.imageIndex = index;
+    },
+    addCarPane(data){
+        this.$store.commit("addCarPaneData",data);;
     }
   }
 };
